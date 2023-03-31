@@ -20,3 +20,16 @@ def reject_form_post():
     logger.info(f"Index reject_form.post says 'Hello!'")
     logger.debug(f"Reason: {request.form.get('why','Fail why')}")
     return redirect(url_for("main.index"))
+    return render_template("reject/reject_form.html")
+
+@main.get("/services")
+def reject_services():
+    return render_template("reject/services.html")
+
+@main.get("/blog")
+def reject_blog():
+    return render_template("reject/blog.html")
+
+@main.get("/products")
+def reject_products():
+    return render_template("reject/products.html")

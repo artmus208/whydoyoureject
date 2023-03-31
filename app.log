@@ -37,8 +37,10 @@
 2023-03-31 12:35:20,452:app.main_bp:INFO:Index reject_form.get says 'Hello!'
 2023-03-31 12:35:33,594:app.main_bp:INFO:Index reject_form.post says 'Hello!'
 2023-03-31 12:37:05,002:app.main_bp:INFO:Index reject_form.post says 'Hello!'
-2023-03-31 12:37:05,003:app.main_bp:DEBUG:Reason: я маленькая причина
-
+2023-03-31 12:37:05,003:app.main_bp:DEBUG:Reason: пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+
+
+
 
 2023-03-31 12:37:05,008:app.main_bp:INFO:Index page says 'Hello!'
 2023-03-31 12:37:08,097:app.main_bp:INFO:Index reject_form.get says 'Hello!'
@@ -195,4 +197,4 @@ sqlalchemy.exc.IntegrityError: (mariadb.IntegrityError) Column 'reason_msg' cann
 [parameters: (None, None, None, None)]
 (Background on this error at: https://sqlalche.me/e/20/gkpj)
 2023-03-31 14:30:26,132:app.main_bp:INFO:Empty msg added in DB.
-2023-03-31 14:35:53,309:app.main_bp:INFO:Msg: На фабрике произошла авария. Один из трактов не работал. Необходимо поддерживать переработку. added in DB.
+2023-03-31 14:35:53,309:app.main_bp:INFO:Msg: пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. added in DB.
