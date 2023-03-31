@@ -5,6 +5,8 @@ from sqlalchemy import or_
 # Done:
 # [X]: Создать в модель в БД
 # [x]: Сделать выгрузку всех пустых записей
+
+# TODO:
 class MyBaseClass:
     def save(self):
         try:
@@ -38,6 +40,7 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
 
     @classmethod
     def get_unfilled_comments(cls):
+        # [ ]: Сортировать полученный список в порядке возрастания даты
         res = db.session.execute(
             db.select(cls).where(or_(cls.comment == None,cls.comment == ''))
             ).scalars()

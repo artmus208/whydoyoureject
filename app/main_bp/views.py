@@ -6,18 +6,28 @@ def index():
     return render_template("reject/index.html")
 
 # TODO:
-# [X]: Создать в модель в БД
-@main.post("/reject-form")
-def reject_form_post():
-    logger.info(f"Index reject_form.post says 'Hello!'")
-    logger.debug(f"Reason: {request.form.get('why','Fail why')}")
-    return render_template("reject/reject_form.html")
 
 @main.get("/reject-form")
 def reject_form_get():
     logger.info(f"Index reject_form.get says 'Hello!'")
-    # [x]: Сделать выгрузку всех пустых записей
-    
+    # [ ]: Получить здесь список всех пустых записей из БД
+    # [ ]: Выдать их на страницу
+    return render_template("reject/reject_form.html")
+
+@main.post("/reject-form")
+def reject_form_post():
+    logger.info(f"Index reject_form.post says 'Hello!'")
+    logger.debug(f"Reason: {request.form.get('why','Fail why')}")
+    # [ ]: Надо принять список заполненных сообщений (в виде массива!)
+    # TIPS: Для того, чтобы это сделать надо воспользоваться Flask-WTF
+    # создать свой виджет. В нём будет содержаться список полей textarea.
+    # 
+
+    return render_template("reject/reject_form.html")
+
+
+
+
 
 
 
