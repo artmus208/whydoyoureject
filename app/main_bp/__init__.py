@@ -4,7 +4,7 @@ from flask import (
     )
 
 
-from app import logging, db
+from app import logger, db
 from app.models import ArchivesCrusherComment
 main = Blueprint('main', __name__, static_url_path="/static/main", static_folder="/static/main")
 
@@ -40,15 +40,3 @@ def add_empty_msg():
 
         print(msg_for_log)
         logger.exception(msg_for_log)
-
-# Конфигурация логгера
-def setup_logger():
-    logger = logging.getLogger(__name__)
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter(
-        '%(asctime)s:%(name)s:%(levelname)s:%(message)s')
-    file_handler = logging.FileHandler("app.log")
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-    return logger
-logger = setup_logger()
