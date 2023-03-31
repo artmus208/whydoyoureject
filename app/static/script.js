@@ -9,4 +9,6 @@ if (menuLinks && pathname != '/') {
 }
 
 const notification = document.querySelector('.notification')
-if (notification && notification.classList.contains('have-notification')) notification.setAttribute('href', '/reject-form')
+if (notification && notification.classList.contains('have-notification')) {
+  notification.setAttribute('href', '/reject-form')
+}
