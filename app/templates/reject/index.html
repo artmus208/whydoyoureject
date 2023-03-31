@@ -1,0 +1,37 @@
+<!-- TIPS Подумать о том, как приписать класс active к элементам навигации
+     -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Персоналу</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <a href="/">
+            <img src="{{ url_for('static', filename='Sign_green.png') }}" width="90" height="70px" />
+          </a>
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="/products">Продукция</a></li>
+            <li><a href="/services">Услуги</a></li>
+            <li><span class="active">Блог</span></li>
+            <li><a class="have-notification" href="/">Уведомления</a></li>
+          </ul>
+        </nav>
+        <div class="tel">
+          <a href="tel:88004000500">8 800 4000 500</a>
+        </div>
+      </header>
+
+
+      {% block content %}
+      {% endblock content %}
+
+</body>
+</html>
