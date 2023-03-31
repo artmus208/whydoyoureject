@@ -3,6 +3,8 @@ from flask import (
     Blueprint, render_template, redirect, url_for, request
     )
 
+from app.forms import TestForm, ACCForm
+
 
 from app import logger, db
 from app.models import ArchivesCrusherComment

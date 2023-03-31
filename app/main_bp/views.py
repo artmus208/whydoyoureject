@@ -6,24 +6,29 @@ def index():
     return render_template("reject/index.html")
 
 # TODO:
-
+# [ ]: Получить здесь список всех пустых записей из БД
+# [ ]: Выдать их на страницу
+# @main.route("/reject-form", methods=["POST", "GET"])
 @main.get("/reject-form")
 def reject_form_get():
     logger.info(f"Index reject_form.get says 'Hello!'")
-    # [ ]: Получить здесь список всех пустых записей из БД
-    # [ ]: Выдать их на страницу
-    return render_template("reject/reject_form.html")
+    form = ACCForm()
+    list_of_empty_projects = ArchivesCrusherComment.get_unfilled_comments()
+    
+    return render_template("reject/reject_form.html", form=form)
 
+
+# [ ]: Надо принять список заполненных сообщений (в виде массива!)
+# TIPS: Для того, чтобы это сделать надо воспользоваться Flask-WTF
+# создать свой виджет. В нём будет содержаться список полей textarea.
 @main.post("/reject-form")
 def reject_form_post():
     logger.info(f"Index reject_form.post says 'Hello!'")
     logger.debug(f"Reason: {request.form.get('why','Fail why')}")
-    # [ ]: Надо принять список заполненных сообщений (в виде массива!)
-    # TIPS: Для того, чтобы это сделать надо воспользоваться Flask-WTF
-    # создать свой виджет. В нём будет содержаться список полей textarea.
-    # 
-
-    return render_template("reject/reject_form.html")
+    form = ACCForm()
+    print(form.errors)
+    print(form.comment.data)
+    return render_template("reject/reject_form.html", form=None)
 
 
 

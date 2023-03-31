@@ -4,15 +4,18 @@
     <hr>
     <p>Дата: *тут будет дата*</p>
     <p>Номер дробилки: *тут будет номер дробилки*</p>
-    <form action="{{ url_for('main.reject_form_post') }}" class="reject-form" method="post">
-        <p><label for="why">Ваша причина:</label></p>
-        <textarea
-            id="why"
-            name="why"
-            rows="5" 
-            cols="60",
-            placeholder="Пожалуйста, напишите тут причину отказа регулирования зазора"></textarea>    
-        <br>
-        <input type="submit" value="Отправить">
-    </form>
+
+    {% if form is not none %}
+        <form action="{{ url_for('main.reject_form_post') }}" class="reject-form" method="post">
+            {{ form.csrf_token }}
+            <div>{{ form.comment.label }} {{ form.comment(class="css_class") }}</div>
+        {% if form.comment.errors %}
+            <ul class="errors">{% for error in form.comment.errors %}<li>{{ error }}</li>{% endfor %}</ul>
+        {% endif %}
+        <div>{{ form.submit() }}</div>
+        </form>
+    {% endif %}
+
+    <p>Тут будет журнал предыдущих записей (нет надобности что-то заполнять)</p>
+
 {% endblock content %}
