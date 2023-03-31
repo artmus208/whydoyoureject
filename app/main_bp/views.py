@@ -5,13 +5,6 @@ def index():
     logger.info(f"Index page says 'Hello!'")
     return render_template("reject/index.html")
 
-@main.get("/reject-form")
-def reject_form():
-    logger.info(f"Index reject_form.get says 'Hello!'")
-    return render_template("reject/reject_form.html")
-
-
-
 # TODO:
 # [X]: Создать в модель в БД
 # [ ]: Сделать проверку записей
