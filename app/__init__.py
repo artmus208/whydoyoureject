@@ -18,22 +18,11 @@ def create_app_db():
             username="root",
             password="pesk-2020",
             hostname="127.0.0.1:3306",
-            databasename="time_managment_web_app",
+            databasename="db_reject",
             )
     app.config['SQLALCHEMY_DATABASE_URI'] = data_base_URI
-    @app.teardown_appcontext
-    def shutdown_session(exception=None):
-        db.session.remove()
-
-    @app.before_first_request
-    def create_database():
-        with app.app_context():
-            db.create_all()
-
     db.init_app(app)
     return app, db
-
-
 
 app, db = create_app_db()
 
