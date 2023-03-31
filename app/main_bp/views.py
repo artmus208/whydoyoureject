@@ -13,13 +13,12 @@ def reject_form():
 
 
 # TODO:
-# [ ]: Создать в модель в БД
+# [X]: Создать в модель в БД
 # [ ]: Сделать проверку записей
 @main.post("/reject-form")
 def reject_form_post():
     logger.info(f"Index reject_form.post says 'Hello!'")
     logger.debug(f"Reason: {request.form.get('why','Fail why')}")
-    return redirect(url_for("main.index"))
     return render_template("reject/reject_form.html")
 
 @main.get("/services")
