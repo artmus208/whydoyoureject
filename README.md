@@ -1,54 +1,78 @@
 # Функционал по отправке причины отклонения регулирования зазора 
 
 ## Инструкция для запуска приложения
-1. Открыть vs code
-2. Запустить git bash терминал
-3. Далее наборы команд в терминале:
-4.  `py -m venv venv`
-5. `source venv/Scripts/activate`
-6. `pip install -r requirements.txt`
-7. `py app.py`
-### Дима - это для тебя:
+1. Создать таблицу в БД с именем `db_reject` c кодировкой `utf8_general_ci`
+2. Открыть vs code
+3. Запустить git bash терминал
+4. Далее наборы команд в терминале:
+5.  `py -m venv venv`
+6. `source venv/Scripts/activate`
+7. `pip install -r requirements.txt`
+8. `py app.py`
+## Дизайнерам для навигации:
 1. В app/templates/reject есть файлы .html
 2. В app/static/style.css есть стили
 3. Меню навигации в index.html
 
-#### Задачи:
+### Задачи (выполнено):
 - По нажатию по одному из пункто навигации, он должен как-то выделяться среди других (веделение согласно брендбуку РАЗУМА)
 - Если на пункте меню УВЕДОМЛЕНИЯ висит класс **.have-notification** это значит, что у него должна быть **href="/reject-form"**, иначе **href="/notification-journal"**
 
-### Файловая структура:
+
+## Дизайнерам задачи: 
+- Сверстать дизайн следующих элементов:  
+  - [ ] Форм ввода, сейчас выглядит вот так  
+     ![Форма ввода](/readme_images/form.png)
+  - [ ] Журнал сообщений выглядит так  
+      ![Журнал сообщений](/readme_images/journal.png)
+- [ ] В шапке слово `Уведомления` нужно будет заменить на иконку в стиле непрочитанного письма или непрочитанных уведомлений (как в соц. сетях), если есть пустые записи в БД. 
+## Файловая структура:
 
     .
+    |-- README.md
     |-- app
-    |   |-- README.md
     |   |-- __init__.py
     |   |-- __pycache__
     |   |   |-- __init__.cpython-310.pyc
-    |   |   `-- config.cpython-310.pyc
+    |   |   |-- config.cpython-310.pyc
+    |   |   |-- forms.cpython-310.pyc
+    |   |   `-- models.cpython-310.pyc
     |   |-- config.py
+    |   |-- forms.py
     |   |-- main_bp
     |   |   |-- __init__.py
     |   |   |-- __pycache__
     |   |   |   |-- __init__.cpython-310.pyc
     |   |   |   `-- views.cpython-310.pyc
     |   |   `-- views.py
+    |   |-- models.py
     |   |-- static
     |   |   |-- Sign_green.png
+    |   |   |-- script.js
     |   |   `-- style.css
     |   `-- templates
     |       `-- reject
+    |           |-- blog.html
+    |           |-- header.html
     |           |-- index.html
+    |           |-- journal.html
     |           |-- notification_journal.html
-    |           `-- reject_form.html
+    |           |-- products.html
+    |           |-- reject_form.html
+    |           `-- services.html
     |-- app.log
     |-- app.py
     |-- docs
     |   `-- technical_task.txt
     |-- project_tree.txt
-    `-- requirements.txt
+    |-- readme_images
+    |   |-- form.png
+    |   `-- journal.png
+    |-- requirements.txt
+    `-- test_queries.py
 
-    8 directories, 19 files
+    9 directories, 32 files
+
 
 
 
