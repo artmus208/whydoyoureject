@@ -35,8 +35,7 @@ class ACCFormList(FlaskForm):
                 label = f"Заполните причину отказа от \
                     {unfilled_comments[i].time_created}, \
                     с номером дробилки: {unfilled_comments[i].crusher_id}"
-                self.comments[i].comment.label = label
-                
+                self.comments[i].comment.label = label  
 
 
     
