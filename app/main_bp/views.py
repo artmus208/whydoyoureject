@@ -27,7 +27,6 @@ def reject_form_post():
     logger.info(f"Index reject_form.post says 'Hello!'")
     unfilled_comments = ArchivesCrusherComment.get_unfilled_comments()
     form = ACCFormList()
-    print(form.errors)
     for ix, c in enumerate(form.comments):
         unfilled_comments[ix].comment = c.comment.data
         unfilled_comments[ix].commit()
@@ -37,7 +36,13 @@ def reject_form_post():
         journal_list.append(j.as_dict())
     return render_template("reject/reject_form.html", forms=None, journal=journal_list)
 
-
+@main.get("/journal")
+def journal_get():
+    journal = ArchivesCrusherComment.get_filled_comments()
+    journal_list = list()
+    for j in journal:
+        journal_list.append(j.as_dict())
+    return render_template("reject/reject_form.html", forms=None, journal=journal_list)
 
 
 
