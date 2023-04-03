@@ -1,6 +1,6 @@
 from app import db
 from sqlalchemy.sql import func
-from sqlalchemy import or_
+from sqlalchemy import or_, and_
 
 # Done:
 # [X]: Создать в модель в БД
@@ -45,8 +45,9 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
         return f'{self.id}, {self.time_created}, {self.time_updated}, {self.crusher_id}, {self.comment}'
 
     def as_dict(self):
-        d = dict(zip(['id', 'time_crated', 'time_updated', 'crusher_id', 'comment'],
-                    [self.id, self.time_created, self.time_updated, self.crusher_id, self.comment]))
+        d = dict(zip(['id', 'time_created', 'time_updated', 'crusher_id', 'comment'],
+                    [self.id, self.time_created.strftime("%d.%m.%Y %H:%M"), 
+                    self.time_updated.strftime("%d.%m.%Y %H:%M"), self.crusher_id, self.comment]))
         return d
         
 
@@ -65,7 +66,7 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
     def get_filled_comments(cls):
         # [x]: Сортировать полученный список в порядке возрастания даты
         res = db.session.execute(
-            db.select(cls).where(or_(cls.comment != None, cls.comment != ''))
+            db.select(cls).where(and_(cls.comment != None, cls.comment != ''))
             .order_by(cls.time_created)
             ).scalars()
         res = res.all()[::-1]

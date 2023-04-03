@@ -32,10 +32,10 @@ def reject_form_post():
         unfilled_comments[ix].comment = c.comment.data
         unfilled_comments[ix].commit()
     journal = ArchivesCrusherComment.get_filled_comments()
+    journal_list = list()
     for j in journal:
-        print(j.as_dict())
-    return "Test dict"
-    # return render_template("reject/reject_form.html", forms=None, journal=journal)
+        journal_list.append(j.as_dict())
+    return render_template("reject/reject_form.html", forms=None, journal=journal_list)
 
 
 
