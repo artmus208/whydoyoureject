@@ -23,9 +23,6 @@
             {% endfor %}
         <div>{{ forms.submit() }}</div>
         </form>
-        <button style="display: block;">
-            <a style="text-decoration: none;" href="/journal">Журнал сообщений</a> 
-        </button>
     {% else %}
         {% include "reject/journal.html" %}
     {% endif %}
