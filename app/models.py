@@ -38,11 +38,15 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
     def __init__(self, msg=None):
         self.comment = msg
 
+    def __repr__(self):
+        return f'{self.id}, {self.time_created}, {self.time_updated}, {self.crusher_id}, {self.comment}'
+
     @classmethod
     def get_unfilled_comments(cls):
-        # [ ]: Сортировать полученный список в порядке возрастания даты
+        # [x]: Сортировать полученный список в порядке возрастания даты
         res = db.session.execute(
             db.select(cls).where(or_(cls.comment == None,cls.comment == ''))
+            .order_by(cls.time_created)
             ).scalars()
         return res
     

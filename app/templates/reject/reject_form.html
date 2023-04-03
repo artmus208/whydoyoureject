@@ -2,20 +2,29 @@
 {% block content %}
     <h1>Форма заполнения причины отказа</h1>
     <hr>
-    <p>Дата: *тут будет дата*</p>
-    <p>Номер дробилки: *тут будет номер дробилки*</p>
-
-    {% if form is not none %}
-        <form action="{{ url_for('main.reject_form_post') }}" class="reject-form" method="post">
-            {{ form.csrf_token }}
-            <div>{{ form.comment.label }} {{ form.comment(class="css_class") }}</div>
-        {% if form.comment.errors %}
-            <ul class="errors">{% for error in form.comment.errors %}<li>{{ error }}</li>{% endfor %}</ul>
-        {% endif %}
-        <div>{{ form.submit() }}</div>
+    {% if forms is not none %}
+    <div >
+        <form   style="padding-left: 150px;"
+                action="{{ url_for('main.reject_form_post') }}"
+                class="reject-form" 
+                method="post">
+            {{ forms.csrf_token }}
+            {% for form in forms.comments %}
+                <div>{{ form.comment.label }} <br>
+                    {{ form.comment(class="comment", placeholder="Ваша причина, сэр:",
+                                    cols="65")}}
+                </div>
+                {% if form.comment.errors %}
+                    <ul class="errors">
+                        {% for error in form.comment.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        <div>{{ forms.submit() }}</div>
         </form>
+    {% else %}
+        <p>Тут будет журнал предыдущих записей (нет надобности что-то заполнять)</p>
     {% endif %}
-
-    <p>Тут будет журнал предыдущих записей (нет надобности что-то заполнять)</p>
-
 {% endblock content %}

@@ -12,10 +12,11 @@ def index():
 @main.get("/reject-form")
 def reject_form_get():
     logger.info(f"Index reject_form.get says 'Hello!'")
-    form = ACCForm()
-    list_of_empty_projects = ArchivesCrusherComment.get_unfilled_comments()
-    
-    return render_template("reject/reject_form.html", form=form)
+    form = ACCFormList()
+    unfilled_comments = ArchivesCrusherComment.get_unfilled_comments().all()
+    form.make_list(unfilled_comments)
+    return render_template("reject/reject_form.html", forms=form)
+    # return f"Count of forms:{len(form.forms)}, count of unfilled comments: {len(unfilled_comments)}"
 
 
 # [ ]: Надо принять список заполненных сообщений (в виде массива!)

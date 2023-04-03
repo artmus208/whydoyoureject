@@ -1,8 +1,8 @@
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, PasswordField, SubmitField
+from wtforms import StringField, TextAreaField, PasswordField, SubmitField, FieldList, FormField
 from wtforms.validators import Length
-
+from app.models import ArchivesCrusherComment
 class TestForm(FlaskForm):
     username = StringField("Username")
     password = PasswordField("Password")
@@ -19,11 +19,24 @@ class ACCForm(FlaskForm):
     comment = TextAreaField("Ваша причина, сэр:",
                             validators=[Length(min=1, max=255)]
                             )
-    submit = SubmitField("Сохранить")
-    list_of_comments = list()
+    # def __init__(self, label):
+    #     self.comment.label = label
 
-    def make_list_of_comments():
-        pass
+class ACCFormList(FlaskForm):
+    comments = FieldList(FormField(ACCForm))
+    submit = SubmitField("Отправить")
+
+    def make_list(self, unfilled_comments):
+        n = len(unfilled_comments)
+        for i in range(n):
+            self.comments.append_entry()
+        if unfilled_comments:
+            for i in range(n):
+                label = f"Заполните причину отказа от \
+                    {unfilled_comments[i].time_created}, \
+                    с номером дробилки: {unfilled_comments[i].crusher_id}"
+                self.comments[i].comment.label = label
+                
 
 
     
