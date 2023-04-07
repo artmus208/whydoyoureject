@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Matahari Sans Extended Black Oblique';
+    src: url('MatahariExtended-900ExBlkObl.eot');
+    src: local('Matahari Sans Extended Black Oblique'), local('MatahariExtended-900ExBlkObl'),
+        url('MatahariExtended-900ExBlkObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-900ExBlkObl.woff2') format('woff2'),
+        url('MatahariExtended-900ExBlkObl.woff') format('woff'),
+        url('MatahariExtended-900ExBlkObl.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Light Oblique';
+    src: url('MatahariExtended-300ExLtObl.eot');
+    src: local('Matahari Sans Extended Light Oblique'), local('MatahariExtended-300ExLtObl'),
+        url('MatahariExtended-300ExLtObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-300ExLtObl.woff2') format('woff2'),
+        url('MatahariExtended-300ExLtObl.woff') format('woff'),
+        url('MatahariExtended-300ExLtObl.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended';
+    src: url('MatahariExtended-900ExtBlack.eot');
+    src: local('Matahari Sans Extended Black'), local('MatahariExtended-900ExtBlack'),
+        url('MatahariExtended-900ExtBlack.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-900ExtBlack.woff2') format('woff2'),
+        url('MatahariExtended-900ExtBlack.woff') format('woff'),
+        url('MatahariExtended-900ExtBlack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended';
+    src: url('MatahariExtended-100ExtThin.eot');
+    src: local('Matahari Sans Extended Thin'), local('MatahariExtended-100ExtThin'),
+        url('MatahariExtended-100ExtThin.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-100ExtThin.woff2') format('woff2'),
+        url('MatahariExtended-100ExtThin.woff') format('woff'),
+        url('MatahariExtended-100ExtThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Extra';
+    src: url('MatahariExtended-800ExtExtBd.eot');
+    src: local('Matahari Sans Extended Extra Bold'), local('MatahariExtended-800ExtExtBd'),
+        url('MatahariExtended-800ExtExtBd.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-800ExtExtBd.woff2') format('woff2'),
+        url('MatahariExtended-800ExtExtBd.woff') format('woff'),
+        url('MatahariExtended-800ExtExtBd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended';
+    src: url('MatahariExtended-300ExtLight.eot');
+    src: local('Matahari Sans Extended Light'), local('MatahariExtended-300ExtLight'),
+        url('MatahariExtended-300ExtLight.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-300ExtLight.woff2') format('woff2'),
+        url('MatahariExtended-300ExtLight.woff') format('woff'),
+        url('MatahariExtended-300ExtLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Thin Oblique';
+    src: url('MatahariExtended-100ExThObl.eot');
+    src: local('Matahari Sans Extended Thin Oblique'), local('MatahariExtended-100ExThObl'),
+        url('MatahariExtended-100ExThObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-100ExThObl.woff2') format('woff2'),
+        url('MatahariExtended-100ExThObl.woff') format('woff'),
+        url('MatahariExtended-100ExThObl.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Bold Oblique';
+    src: url('MatahariExtended-700ExBdObl.eot');
+    src: local('Matahari Sans Extended Bold Oblique'), local('MatahariExtended-700ExBdObl'),
+        url('MatahariExtended-700ExBdObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-700ExBdObl.woff2') format('woff2'),
+        url('MatahariExtended-700ExBdObl.woff') format('woff'),
+        url('MatahariExtended-700ExBdObl.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Oblique';
+    src: url('MatahariExtended-400ExRgObl.eot');
+    src: local('Matahari Sans Extended Oblique'), local('MatahariExtended-400ExRgObl'),
+        url('MatahariExtended-400ExRgObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-400ExRgObl.woff2') format('woff2'),
+        url('MatahariExtended-400ExRgObl.woff') format('woff'),
+        url('MatahariExtended-400ExRgObl.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Semi Bold Oblique';
+    src: url('MatahariExtended-600ExSmBdObl.eot');
+    src: local('Matahari Sans Extended Semi Bold Oblique'), local('MatahariExtended-600ExSmBdObl'),
+        url('MatahariExtended-600ExSmBdObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-600ExSmBdObl.woff2') format('woff2'),
+        url('MatahariExtended-600ExSmBdObl.woff') format('woff'),
+        url('MatahariExtended-600ExSmBdObl.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Semi';
+    src: url('MatahariExtended-600ExtSemBd.eot');
+    src: local('Matahari Sans Extended Semi Bold'), local('MatahariExtended-600ExtSemBd'),
+        url('MatahariExtended-600ExtSemBd.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-600ExtSemBd.woff2') format('woff2'),
+        url('MatahariExtended-600ExtSemBd.woff') format('woff'),
+        url('MatahariExtended-600ExtSemBd.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended Extra Bold Oblique';
+    src: url('MatahariExtended-800ExXBdObl.eot');
+    src: local('Matahari Sans Extended Extra Bold Oblique'), local('MatahariExtended-800ExXBdObl'),
+        url('MatahariExtended-800ExXBdObl.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-800ExXBdObl.woff2') format('woff2'),
+        url('MatahariExtended-800ExXBdObl.woff') format('woff'),
+        url('MatahariExtended-800ExXBdObl.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended';
+    src: url('MatahariExtended-700ExtBold.eot');
+    src: local('Matahari Sans Extended Bold'), local('MatahariExtended-700ExtBold'),
+        url('MatahariExtended-700ExtBold.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-700ExtBold.woff2') format('woff2'),
+        url('MatahariExtended-700ExtBold.woff') format('woff'),
+        url('MatahariExtended-700ExtBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matahari Sans Extended';
+    src: url('MatahariExtended-400ExtReg.eot');
+    src: local('Matahari Sans Extended'), local('MatahariExtended-400ExtReg'),
+        url('MatahariExtended-400ExtReg.eot?#iefix') format('embedded-opentype'),
+        url('MatahariExtended-400ExtReg.woff2') format('woff2'),
+        url('MatahariExtended-400ExtReg.woff') format('woff'),
+        url('MatahariExtended-400ExtReg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

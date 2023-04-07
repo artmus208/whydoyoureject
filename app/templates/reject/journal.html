@@ -1,0 +1,37 @@
+{% if journal %}
+<content>
+    <h1 class="heading">Журнал сообщений с информацией о причинах отказов от регулирования</h1>
+    <table>
+        <thead>
+            <tr><th colspan="4"></th></tr>
+            <tr>
+                <th>Номер дробилки</th>
+                <th>Дата отказа</th>
+                <th>Дата написания причины</th>
+                <th>Коментарий</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in journal %}
+            <tr>
+                <td>{{j['crusher_id']}}</td>
+                <td>{{ j['time_created'] }}</td>
+                <td>{{j['time_updated']}}</td>
+                <td class="table-comment">{{j['comment']}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="back-main">Вернуться на главную</button>
+    <button class="back-btn"> Назад </button>
+</content>
+{% else %}
+<content>
+    <p class="none-reason-message">
+        Судя по всему нет незаполненных сообщений о причинах отказа
+        в регулировании зазора, но вы можете посмотреть <a class="journal-link" href="/journal">журнал</a>.
+    </p>
+    <button class="view-journal"><a class="journal-link" href="/journal">Посмотреть журнал</a></button>
+    <button class="back-btn"> Назад </button>
+</content>
+{% endif %}

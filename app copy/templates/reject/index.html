@@ -1,0 +1,17 @@
+<!-- TIPS Подумать о том, как приписать класс active к элементам навигации
+     -->
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Персоналу</title>
+  </head>
+  <body>
+    {% include "reject/header.html" %}
+    {% block content %} {% endblock content %}
+  </body>
+</html>

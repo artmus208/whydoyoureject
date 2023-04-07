@@ -1,0 +1,32 @@
+{% extends "reject/index.html" %}
+{% block content %}
+    {% if forms is not none and forms.comments|length %}
+    <content>
+        <h1 class="heading">Форма заполнения причины отказа</h1>
+        <div class="forms">
+        <form   action="{{ url_for('main.reject_form_post') }}"
+                class="reject-form" 
+                method="post">
+            {{ forms.csrf_token }}
+            {% for form in forms.comments %}
+                <div class="form-reason-label">{{ form.comment.label }} <br>
+                    {{ form.comment(class="form-reason", placeholder="Ваша причина",
+                                    cols="65")}}
+                </div>
+                {% if form.comment.errors %}
+                    <ul class="errors">
+                        {% for error in form.comment.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endfor %}
+        <div>{{ forms.submit(class="submit-btn") }}</div>
+        <button class="back-btn"> Назад </button>
+        </form>
+        </div>
+    </content>
+    {% else %}
+        {% include "reject/journal.html" %}
+    {% endif %}
+{% endblock content %}

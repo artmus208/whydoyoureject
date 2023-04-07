@@ -1,0 +1,18 @@
+<header>
+  <div class="logo">
+    <a href="/">
+      <img src="{{ url_for('static', filename='logo_white.svg') }}" width="65px" height="47px" />
+    </a>
+  </div>
+  <div class="menu">
+    <div class="menu__icons">
+      <a class="menu__list-link notification {{class_name}}" id ="menu__icon" href="/journal">
+      <img src="{{ url_for('static', filename='icon_message_white.svg') }}" width="35px" height="30px">  
+      </a>
+      <a id ="menu__icon" href=""> <img src="{{ url_for('static', filename='icon_home.svg') }}" width="26px" height="28px" /> </a>
+      <a id ="menu__icon" href=""> <img src="{{ url_for('static', filename='icon_question.svg') }}" width="28px" height="28px" /> </a>
+      <a id ="menu__icon" href=""> <img src="{{ url_for('static', filename='icon_reboot.svg') }}" width="28px" height="27px" /> </a>
+      <a id ="menu__icon" href=""> <img src="{{ url_for('static', filename='icon_off.svg') }}" width="28px" height="28px" /> </a>
+    </div>
+  </div>
+</header>
