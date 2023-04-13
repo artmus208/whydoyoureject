@@ -57,7 +57,7 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
         # [x]: Сортировать полученный список в порядке возрастания даты
         res = cls.query.filter(
             or_(cls.comment == None, cls.comment == '')
-        ).all()
+        ).order_by(cls.time_created).all()
         # db.session.execute(
         #     db.select(cls).where(or_(cls.comment == None, cls.comment == ''))
         #     .order_by(cls.time_created)
