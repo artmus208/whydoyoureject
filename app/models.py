@@ -55,26 +55,35 @@ class ArchivesCrusherComment(MyBaseClass, db.Model):
     @classmethod
     def get_unfilled_comments(cls):
         # [x]: Сортировать полученный список в порядке возрастания даты
-        res = db.session.execute(
-            db.select(cls).where(or_(cls.comment == None, cls.comment == ''))
-            .order_by(cls.time_created)
-            ).scalars()
-        return res.all()
+        res = cls.query.filter(
+            or_(cls.comment == None, cls.comment == '')
+        ).all()
+        # db.session.execute(
+        #     db.select(cls).where(or_(cls.comment == None, cls.comment == ''))
+        #     .order_by(cls.time_created)
+        #     ).scalars()
+        return res
     
 
     @classmethod
     def get_filled_comments(cls):
         # [x]: Сортировать полученный список в порядке возрастания даты
-        res = db.session.execute(
-            db.select(cls).where(and_(cls.comment != None, cls.comment != ''))
-            .order_by(cls.time_created)
-            ).scalars()
+        res = cls.query.filter(
+            and_(cls.comment != None, cls.comment != '')
+        ).order_by(cls.time_created)
+        # res = db.session.execute(
+        #     db.select(cls).where(and_(cls.comment != None, cls.comment != ''))
+        #     .order_by(cls.time_created)
+        #     ).scalars()
         res = res.all()[::-1]
         return res
 
     @classmethod
     def get_first_empty(cls):
-        res = db.session.execute(
-            db.select(cls).where(or_(cls.comment == None,cls.comment == ''))
-        ).scalar()
+        res = cls.query.filter(
+            or_(cls.comment == None,cls.comment == '')
+        ).first()
+        # res = db.session.execute(
+        #     db.select(cls).where(or_(cls.comment == None,cls.comment == ''))
+        # ).scalar()
         return res

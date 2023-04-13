@@ -45,19 +45,13 @@ def reject_form_post():
 @main.get("/journal")
 def journal_get():
     journal = ArchivesCrusherComment.get_filled_comments()
+    print(
+        f"Into journal_get 'journal':{journal}"
+    )
     journal_list = list()
     for j in journal:
         journal_list.append(j.as_dict())
     return render_template("reject/reject_form.html", forms=None, journal=journal_list)
-
-
-
-
-
-
-
-
-
 
 @main.get("/services")
 def reject_services():
